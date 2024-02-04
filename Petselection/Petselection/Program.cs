@@ -60,22 +60,49 @@ class Program
             switch (menuSelection)
             {
                 case "1":
-                    hunger -= 1;
+                    hunger++;
                     if (hunger < 0) hunger = 0;
 
-                    health += 1;
+                    health++;
                     if (health > 10) health = 10;
 
-                    Console.WriteLine("Hunger decreased, health increased.");
+                    Console.WriteLine(petName + "'s Hunger decreased, health increased.");
+
+                    Console.WriteLine("Hunger: " + hunger);
+                    Console.WriteLine("Health: " + health);
+                    Console.WriteLine("Happiness: " + happiness);
                     break;
                 case "2":
-                    
+                    hunger++;
+                    if (hunger > 10) hunger = 10;
+
+                    happiness++;
+                    if (happiness > 10) happiness = 10;
+
+                    Console.WriteLine(petName + "'s increases happiness but also increases hunger.");
+
+                    Console.WriteLine("Hunger: " + hunger);
+                    Console.WriteLine("Health: " + health);
+                    Console.WriteLine("Happiness: " + happiness);
                     break;
                 case "3":
-                    
+                    health++;
+                    if (health > 10) health = 10;
+
+                    happiness--;
+                    if (happiness < 0) happiness = 0;
+
+
+                    Console.WriteLine(petName + "'s health increased, happiness decreased.");
+
+                    Console.WriteLine("Hunger: " + hunger);
+                    Console.WriteLine("Health: " + health);
+                    Console.WriteLine("Happiness: " + happiness);
                     break;
                 case "4":
-                    
+                    Console.WriteLine("Hunger: " + hunger);
+                    Console.WriteLine("Health: " + health);
+                    Console.WriteLine("Happiness: " + happiness);
                     break;
                 case "5":
                     Console.WriteLine("Thank you for playing with " + petName + ". Goodbye!");
