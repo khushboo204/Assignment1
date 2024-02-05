@@ -1,5 +1,9 @@
 # Assignment1
 
+# Git Repo URL: 
+
+https://github.com/khushboo204/Assignment1
+
 # Video Recording:
 
 https://conestogac.zoom.us/rec/share/kW3WCWInEnR2wcnWip9h8gqBEM9FKZDJct9fIWXgjafSdkd9ZHuE9NgWV-dPNm69.yKmouZMGrz2WLyt-
