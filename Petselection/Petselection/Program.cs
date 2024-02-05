@@ -15,19 +15,13 @@ class Program
         Console.WriteLine("User Input: " + petChoice);
 
         //Check the type entered by User and show the response.
-        if (petChoice == "1")
-        {
+        if (petChoice == "1") {
             Console.WriteLine("You have selected a Cat as your pet.");
-        }
-        else if (petChoice == "2")
-        {
+        }else if (petChoice == "2") {
             Console.WriteLine("You have selected a Dog as your pet.");
-        }
-        else if (petChoice == "3")
-        {
+        }else if (petChoice == "3") {
             Console.WriteLine("You have selected a Rabbit as your pet.");
-        }
-        else {
+        }else {
             Console.WriteLine("Invalid choice");
             return;
         }
@@ -41,6 +35,7 @@ class Program
         int hunger = 0;
         int happiness = 0;
         int health = 0;
+        int hours = 0;
 
         //keep allowing user to select from menu until pressed exit.
         string menuSelection;
@@ -66,11 +61,25 @@ class Program
                     health++;
                     if (health > 10) health = 10;
 
-                    Console.WriteLine(petName + "'s Hunger decreased, health increased.");
+                    hours++;
+                    Console.WriteLine("You fed "+ petName + ".His Hunger decreased, and health improved slighly.");
+                    Console.WriteLine();
+                    if (hunger >= 7)
+                    {
+                        Console.WriteLine(petName + " is extremely hungry. Health is decreasing!");
+                        health --;
+                    }
 
-                    Console.WriteLine("Hunger: " + hunger);
-                    Console.WriteLine("Health: " + health);
-                    Console.WriteLine("Happiness: " + happiness);
+                    if (happiness <= 2)
+                    {
+                        Console.WriteLine(petName + " is very unhappy. Health is decreasing!");
+                        health --;
+                    }
+
+                    if (health <= 0)
+                    {
+                        Console.WriteLine(petName + " 's health is not good due to neglect.");
+                    }
                     break;
                 case "2":
                     hunger++;
@@ -79,11 +88,8 @@ class Program
                     happiness++;
                     if (happiness > 10) happiness = 10;
 
-                    Console.WriteLine(petName + "'s increases happiness but also increases hunger.");
-
-                    Console.WriteLine("Hunger: " + hunger);
-                    Console.WriteLine("Health: " + health);
-                    Console.WriteLine("Happiness: " + happiness);
+                    hours++;
+                    Console.WriteLine("You plyaed with "+ petName + ". His happiness increases but he's a bit hungery.");
                     break;
                 case "3":
                     health++;
@@ -92,14 +98,11 @@ class Program
                     happiness--;
                     if (happiness < 0) happiness = 0;
 
-
+                    hours++;
                     Console.WriteLine(petName + "'s health increased, happiness decreased.");
-
-                    Console.WriteLine("Hunger: " + hunger);
-                    Console.WriteLine("Health: " + health);
-                    Console.WriteLine("Happiness: " + happiness);
                     break;
                 case "4":
+                    Console.WriteLine(petName + "'s status:");
                     Console.WriteLine("Hunger: " + hunger);
                     Console.WriteLine("Health: " + health);
                     Console.WriteLine("Happiness: " + happiness);
